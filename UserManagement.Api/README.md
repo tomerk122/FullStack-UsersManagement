@@ -36,7 +36,14 @@ or using environment variables.**
 
 To create a JWT token, send a POST request to the `api/Users/GetToken` endpoint with the following body:
 
-**You must be a user in credential in App_Data**
+**In order to create a key, you must be an authenticated user in the credentials.json file.**
+```json
+{
+  "userName": "Amit",
+  "password": "qwe12www",
+  "company": "RICHKID"
+}
+```
 
 ```
 curl -X 'POST' \
