@@ -30,7 +30,8 @@ The UserManagement.API project is a web API designed for managing users. It incl
 ### Generating a JWT Token
 ###
 **Currently the JWT key is hardcoded in the `appsettings.json` file. 
-In a production environment, it should be stored securely, such as in Azure Key Vault or AWS Secrets Manager** 
+In a production environment, it should be stored securely, such as in Azure Key Vault or AWS Secrets Manager
+or using environment variables.** 
 ###
 
 To create a JWT token, send a POST request to the `api/Users/GetToken` endpoint with the following body:
