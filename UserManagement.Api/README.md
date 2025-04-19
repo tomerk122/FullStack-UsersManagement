@@ -13,7 +13,8 @@ The UserManagement.API project is a web API designed for managing users. It incl
 - **Input Validation**: Using DTOs for request validation
 - **API Documentation**: Comprehensive Swagger documentation
 - **synchronization mechanism**: Can handle multiple users trying to use the API for our system
-- ** Credtentials**: Secure storage of authentication credentials in a JSON file (manager who can access the API)
+- **Credtentials**: Secure storage of authentication credentials in a JSON file (manager who can access the API)
+  
 
 ## Getting Started
 
