@@ -4,12 +4,11 @@
 
 The UserManagement.API project is a web API designed for managing users. It includes secure mechanisms for handling user data, API authentication via JSON Web Tokens (JWT) & IP WhiteList, and dynamic request validation through middleware. This project also utilizes DTOs (Data Transfer Objects) for input validation and provides a streamlined API interface with Swagger documentation.
 
-##// This code currently uses synchronous operations as the expected system load is manageable,
-// and simplicity is prioritized for easier debugging and maintenance.
-// If future growth in traffic or demand arises (e.g., handling concurrent requests),
-// refactoring to asynchronous methods (e.g., using async/await) will be necessary to enhance performance,
-// optimize resource utilization, and improve responsiveness in high-load scenarios.
-##
+**This code currently uses synchronous operations as the expected system load is manageable,
+ and simplicity is prioritized for easier debugging and maintenance.
+ If future growth in traffic or demand arises (e.g., handling concurrent requests),
+ refactoring to asynchronous methods (e.g., using async/await) will be necessary to enhance performance,
+ optimize resource utilization, and improve responsiveness in high-load scenarios.**
 
 ## Features
 
