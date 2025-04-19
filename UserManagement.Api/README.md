@@ -164,25 +164,6 @@ To access the Swagger UI documentation for this API:
   
 The Swagger UI provides interactive documentation where you can explore and test all available endpoints.
 
-## Manual API Requests
-
-You can also interact with the API manually using tools like Postman, curl, or any HTTP client:
-
-### Authentication Request
-```bash
-curl -X 'POST' \
-  'https://localhost:7011/api/Users/GetToken' \
-  -H 'accept: */*' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "userName": "Amit",
-  "password": "qwe12www",
-  "company": "RICHKID"
-}'
- 
-```
-and etc..
-
 **Remember to replace `<port>` with your actual API port and `your_jwt_token` with the token received from the `GetToken` endpoint.**
 ![image](https://github.com/user-attachments/assets/9636e677-d7eb-49f4-b1d1-8dd5fbe19092)
 
