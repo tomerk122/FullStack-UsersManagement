@@ -121,10 +121,12 @@ namespace UserManagement.Repositories
              try
              {
                  var users = GetCachedUsers();
-                 if (users.Any(myUser => myUser.UserId != updatedUser.UserId && CheckUserName(updatedUser.UserName)))
-                 {
-                     throw new Exception("Unique User Name needed!");
-                 }
+                    if (users.Any(myUser =>
+                            myUser.UserId != updatedUser.UserId && 
+                            myUser.UserName.Equals(updatedUser.UserName, StringComparison.OrdinalIgnoreCase)))
+                        {
+                            throw new Exception("Unique User Name needed!");
+                        }
         
                  var existingUser = users.FirstOrDefault(myUsers => myUsers.UserId == updatedUser.UserId);
                  if (existingUser != null)
