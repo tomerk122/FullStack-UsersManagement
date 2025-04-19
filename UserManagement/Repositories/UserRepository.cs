@@ -117,35 +117,32 @@ namespace UserManagement.Repositories
         }
 
         public static void UpdateUser(User updatedUser)
-        {
-            try
-            {
-                var users = GetCachedUsers();
-                if (updatedUser.UserId != users.FirstOrDefault(myUser => myUser.UserId == updatedUser.UserId)?.UserId)
-                {
-                    if (CheckUserName(updatedUser.UserName))
-                    {
-                        throw new Exception("unique User Name needed");
-                    }
-                }
-
-                var existingUser = users.FirstOrDefault(myUsers => myUsers.UserId == updatedUser.UserId);
-                if (existingUser != null)
-                {
-                    int index = _cachedUsers.IndexOf(existingUser);
-                    _cachedUsers[index] = updatedUser;
-                    SaveUsers();
-                }
-                else
-                {
-                    throw new Exception("User not Found!");
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error updating user: " + ex.Message);
-            }
-        }
+         {
+             try
+             {
+                 var users = GetCachedUsers();
+                 if (users.Any(myUser => myUser.UserId != updatedUser.UserId && CheckUserName(updatedUser.UserName)))
+                 {
+                     throw new Exception("Unique User Name needed!");
+                 }
+        
+                 var existingUser = users.FirstOrDefault(myUsers => myUsers.UserId == updatedUser.UserId);
+                 if (existingUser != null)
+                 {
+                     int index = _cachedUsers.IndexOf(existingUser);
+                     _cachedUsers[index] = updatedUser;
+                     SaveUsers();
+                 }
+                 else
+                 {
+                     throw new Exception("User not Found!");
+                 }
+             }
+             catch (Exception ex)
+             {
+                 throw new Exception("Error updating user: " + ex.Message);
+             }
+         }
         public static List<User> GetUsersByStatus(bool isActive)
         {
             try
